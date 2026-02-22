@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include fluid-type(height, 320px, 1920px, 50px, 70px);
+    @include fluid-type(padding-left padding-right, 320px, 1920px, 15px, 30px);
+    box-shadow: $shadow;
+    background-color: #fff;
+    flex: 0 0 auto;
+
+    &__logo {
+        display: block;
+        text-decoration: none;
+
+        &-img {
+            display: block;
+            width: auto;
+            @include fluid-type(height, 320px, 1920px, 40px, 60px);
+        }
+    }
+
+    &__profile {
+
+        &-photo {
+            display: block;
+            @include fluid-type(height width, 320px, 1920px, 30px, 40px);
+            border-radius: 50%;
+        }
+    }
+}
+
+.hamburger {
+    display: block;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 18px;
+    padding: 0;
+    font-size: 0;
+    border: 0;
+    border-top: 2px solid $dark;
+    border-bottom: 2px solid $dark;
+    background: none;
+
+    &__icon {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $dark;
+    }
+}
+
+@media all and (min-width: $desktop) {
+    .hamburger {
+        display: none;
+    }
+}

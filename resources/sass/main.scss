@@ -1,0 +1,24 @@
+@import "vars";
+@import "components/common";
+@import "components/grid";
+@import "components/buttons";
+@import "components/forms";
+@import "components/auth-page";
+@import "components/header";
+@import "components/dropdown";
+@import "components/sidebar";
+@import "components/panel";
+@import "components/footer";
+@import "components/select2";
+@import "components/modal";
+@import "components/tabs";
+@import "components/errors";
+@import "components/jquery-ui";
+@import "components/custom";
+@import "components/searching";
+@import "components/alert";
+
+/* Иконки */
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";

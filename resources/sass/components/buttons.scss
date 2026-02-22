@@ -1,0 +1,220 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: $transition;
+    font-weight: 700;
+    line-height: 1;
+    border: 0;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &--default {
+        @include fluid-type(height, 320px, 1920px, 28px, 36px);
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 14px, 20px);
+        @include fluid-type(font-size, 320px, 1920px, 13px, 16px);
+
+        &-square,
+        &-square-xs {
+            @include fluid-type(height width, 320px, 1920px, 28px, 36px);
+            @include fluid-type(font-size, 320px, 1920px, 13px, 16px);
+            justify-content: center;
+            padding: 0;
+        }
+    }
+
+    &--medium {
+        @include fluid-type(height, 320px, 1920px, 32px, 42px);
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 16px, 26px);
+        @include fluid-type(font-size, 320px, 1920px, 14px, 17px);
+
+        &-square,
+        &-square-xs {
+            @include fluid-type(height width, 320px, 1920px, 32px, 42px);
+            @include fluid-type(font-size, 320px, 1920px, 14px, 17px);
+            justify-content: center;
+            padding: 0;
+        }
+    }
+
+    &--large {
+        @include fluid-type(height, 320px, 1920px, 36px, 48px);
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 20px, 32px);
+        @include fluid-type(font-size, 320px, 1920px, 15px, 18px);
+
+        &-square,
+        &-square-xs {
+            @include fluid-type(height width, 320px, 1920px, 36px, 48px);
+            @include fluid-type(font-size, 320px, 1920px, 15px, 18px);
+            justify-content: center;
+            padding: 0;
+        }
+    }
+
+    &--full {
+        width: 100%;
+        justify-content: center;
+    }
+
+    &--blue {
+        color: #fff;
+        background-color: $blue;
+
+        &:hover,
+        &:focus {
+            background-color: $blueLight;
+
+            .btn__reset-line {
+                border-color: $blueLight;
+            }
+        }
+
+        .btn__reset-line {
+            border-color: $blue;
+        }
+    }
+
+    &--green {
+        color: #fff;
+        background-color: $green;
+
+        &:hover,
+        &:focus {
+            background-color: $greenLight;
+
+            .btn__reset-line {
+                border-color: $greenLight;
+            }
+        }
+
+        .btn__reset-line {
+            border-color: $green;
+        }
+    }
+
+    &--orange {
+        color: #fff;
+        background-color: $orange;
+
+        &:hover,
+        &:focus {
+            background-color: $orangeLight;
+
+            .btn__reset-line {
+                border-color: $orangeLight;
+            }
+        }
+
+        .btn__reset-line {
+            border-color: $orange;
+        }
+    }
+
+    &--red {
+        color: #fff;
+        background-color: $red;
+
+        &:hover,
+        &:focus {
+            background-color: $redLight;
+
+            .btn__reset-line {
+                border-color: $redLight;
+            }
+        }
+
+        .btn__reset-line {
+            border-color: $red;
+        }
+    }
+
+    &--white {
+        color: $darkLight;
+        background-color: #fff;
+
+        &:hover,
+        &:focus  {
+            color: $blueLight;
+            background-color: $grayUltraLight;
+        }
+    }
+
+    &--gray {
+        color: $darkLight;
+        background-color: $grayUltraLight;
+
+        &:hover,
+        &:focus  {
+            color: $blueLight;
+            background-color: $grayLight;
+        }
+    }
+
+    &--text{
+        &-left {
+            justify-content: flex-start;
+        }
+    }
+
+    &__icon {
+        font-size: 1em;
+    }
+
+    &__text {
+
+        &--left {
+            margin-right: 0.6em;
+        }
+
+        &--right {
+            margin-left: 0.6em;
+        }
+    }
+
+    &__reset-line {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 6px;
+        width: 80%;
+        border: 2px solid;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: all $transition;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transform-origin: center;
+    }
+}
+
+@media all and (min-width: $tablet) {
+    .btn {
+
+        &--default {
+            &-square-xs {
+                width: auto;
+                @include fluid-type(padding-left padding-right, 320px, 1920px, 14px, 20px);
+            }
+        }
+
+        &--medium {
+            &-square-xs {
+                width: auto;
+                @include fluid-type(padding-left padding-right, 320px, 1920px, 16px, 26px);
+            }
+        }
+
+        &--large {
+            &-square-xs {
+                width: auto;
+                @include fluid-type(padding-left padding-right, 320px, 1920px, 20px, 32px);
+            }
+        }
+
+    }
+}

@@ -1,0 +1,128 @@
+.dropdown {
+    position: relative;
+
+    &__menu {
+        position: absolute;
+        top: 100%;
+        padding-left: 0;
+        padding-top: 0;
+        margin: 0;
+        list-style: none;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 666;
+        line-height: 1;
+        background-color: #fff;
+        box-shadow: $shadowLight;
+        border-radius: 3px;
+        transition: all $transition;
+        @include fluid-type(padding-top padding-bottom, 320px, 1920px, 5px, 10px);
+
+        &.open {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &--right {
+            right: 0;
+        }
+
+        &--left {
+            left: 0;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            @include fluid-type(height, 320px, 1920px, 36px, 48px);
+            @include fluid-type(padding-left padding-right, 320px, 1920px, 20px, 30px);
+            text-decoration: none;
+            color: $dark;
+            transition: all $transition;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            font-weight: 400;
+            @include fluid-type(font-size, 320px, 1920px, 14px, 17px);
+
+            &:hover {
+                background-color: $grayUltraLight;
+            }
+        }
+
+        &-icon {
+            color: $darkLight;
+            @include fluid-type(margin-right, 320px, 1920px, 10px, 15px);
+            @include fluid-type(width, 320px, 1920px, 13px, 17px);
+        }
+
+        .form__checkbox {
+            width: 100%;
+            @include fluid-type(height, 320px, 1920px, 30px, 40px);
+
+            &-label {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    &__form {
+        max-width: 250px;
+        font-size: 0.85em;
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 15px, 25px);
+        @include fluid-type(padding-bottom, 320px, 1920px, 5px, 10px);
+    }
+
+    &__scroll {
+        padding-right: 5px;
+        max-height: 205px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $gray;
+            border-radius: 3px;
+        }
+    }
+
+    &__button {
+        @include fluid-type(padding-top, 320px, 1920px, 10px, 15px);
+    }
+}
+
+@media all and (min-width: $tablet) {
+    .dropdown {
+
+        &__scroll {
+            max-height: 225px;
+        }
+    }
+}
+
+@media all and (min-width: $desktop) {
+    .dropdown {
+
+        &__form {
+            max-width: 290px;
+        }
+
+        &__scroll {
+            max-height: 235px;
+        }
+    }
+}
+
+@media all and (min-width: $desktopXl) {
+    .dropdown {
+
+        &__scroll {
+            max-height: 245px;
+        }
+    }
+}

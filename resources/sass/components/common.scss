@@ -1,0 +1,312 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include fluid-type(font-size, 320px, 1920px, 14px, 18px);
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: $helvetica;
+    color: $dark;
+    background-color: $grayLight;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+button {
+    font-family: inherit;
+}
+
+input,
+textarea {
+    font-family: inherit;
+
+    &::-moz-placeholder  {
+        color: $grayDarken;
+        opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $grayDarken;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $grayDarken;
+        opacity: 1;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6, {
+    color: $dark;
+    line-height: 1.3;
+    margin: 1.4em 0 1em;
+}
+
+h1, .h1 {
+    margin-top: 0;
+    @include fluid-type(font-size, 320px, 1920px, 24px, 36px);
+}
+h2, .h2 {
+    @include fluid-type(font-size, 320px, 1920px, 22px, 32px);
+}
+h3, .h3 {
+    @include fluid-type(font-size, 320px, 1920px, 20px, 28px);
+}
+h4, .h4 {
+    @include fluid-type(font-size, 320px, 1920px, 18px, 24px);
+}
+h5, .h5 {
+    @include fluid-type(font-size, 320px, 1920px, 16px, 20px);
+}
+h6, .h6 {
+    @include fluid-type(font-size, 320px, 1920px, 14px, 18px);
+}
+
+.reset {
+
+    &-m {
+        margin: 0;
+    }
+
+    &-mt {
+        margin-top: 0;
+    }
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    &__main {
+        width: 100%;
+        @include fluid-type(padding, 320px, 1920px, 15px, 30px);
+
+        a:not(.btn):not(.tabs__link):not(.js-sort-btn) {
+            color: $blue;
+            text-decoration: none;
+            transition: color $transition;
+
+            &:hover,
+            &:focus {
+                color: $blueLight;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    font-size: 0.85em;
+    margin-left: 0;
+    margin-right: 0;
+    @include fluid-type(margin-top, 320px, 1920px, 5px, 10px);
+    @include fluid-type(margin-bottom, 320px, 1920px, 15px, 30px);
+    color: $darkLight;
+
+    li:not(:last-child) {
+        &:after {
+            content: '/';
+            display: inline-block;
+            margin: 0 0.4em;
+        }
+    }
+}
+
+.xs {
+
+    &-hide { display: none; }
+}
+
+.notifyjs-corner {
+    position: fixed;
+    z-index: 888;
+    @include fluid-type(padding-right, 320px, 1920px, 15px, 30px);
+    @include fluid-type(padding-top, 320px, 1920px, 5px, 0);
+}
+.notifyjs-bootstrap-info,
+.notifyjs-bootstrap-base {
+    color: $dark;
+    line-height: 1;
+    font-size: 0.9em;
+    @include fluid-type(padding, 320px, 1920px, 9px, 15px);
+    @include fluid-type(margin-top, 320px, 1920px, 5px, 10px);
+    background-color: #fcf8e3;
+    box-shadow: $shadow;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+.notifyjs-bootstrap-error {
+    color: #ffffff;
+    background-color: $red;
+}
+.notifyjs-bootstrap-success {
+    color: #ffffff;
+    background-color: $green;
+}
+.notifyjs-bootstrap-warn {
+    color: #ffffff;
+    background-color: $orange;
+}
+
+.pagination {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    a, span {
+        justify-content: center;
+        @include fluid-type(height width, 320px, 1920px, 28px, 40px);
+        @include fluid-type(font-size, 320px, 1920px, 13px, 16px);
+    }
+
+    a {
+        color: $blue;
+
+        &:hover {
+            background-color: $grayUltraLight;
+            text-decoration: none;
+        }
+    }
+
+    span {
+        color: #fff;
+        background-color: $blue;
+    }
+}
+
+.list-group {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        line-height: 1;
+        padding: 0.6em 0;
+
+        &--head {
+            color: #ffffff;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid $grayUltraLight;
+
+            .form__checkbox {
+                color: $dark;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.doubleScroll-scroll-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 555;
+    top: 0;
+    width: 100% !important;
+    height: auto !important;
+    overflow: auto !important;
+
+    > div {
+        height: 1px !important;
+    }
+
+    &::-webkit-scrollbar {
+        height: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray;
+        border-radius: 10px;
+    }
+}
+
+@media all and (min-width: $tablet) {
+    .text {
+
+        &-sm {
+
+            &-right {
+                text-align: right;
+            }
+        }
+    }
+
+    .xs {
+
+        &-hide { display: block; }
+    }
+}
+
+@media all and (min-width: $desktop) {
+    .page {
+
+        &__content {
+            overflow: hidden;
+        }
+
+        &__main {
+            flex: 1 1 auto;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $gray;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .doubleScroll-scroll-wrapper {
+        @include fluid-type(top, 1024px, 1920px, -20px, -30px);
+    }
+}

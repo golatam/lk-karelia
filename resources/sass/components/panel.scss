@@ -1,0 +1,129 @@
+.panel {
+
+    &__head {
+        margin: 0 0 6px;
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 12px, 30px);
+        @include fluid-type(padding-top padding-bottom, 320px, 1920px, 8px, 15px);
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &__actions {
+        display: flex;
+        @include fluid-type(margin-left margin-right, 320px, 1920px, -4px, -7px);
+
+        &-item {
+            @include fluid-type(padding-left padding-right, 320px, 1920px, 4px, 7px);
+
+            &.right {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__body {
+        margin: 0 0 6px;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &__content {
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 12px, 30px);
+        @include fluid-type(padding-top padding-bottom, 320px, 1920px, 20px, 40px);
+    }
+
+    &__filter {
+        margin: 0 0 6px;
+        background-color: rgba(#fff, 0.5);
+        border-radius: 3px;
+    }
+
+    &__footer {
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 12px, 30px);
+        @include fluid-type(padding-top padding-bottom, 320px, 1920px, 8px, 15px);
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &__table {
+        min-width: 100%;
+        border-collapse: collapse;
+
+        &-wrap {
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $gray;
+                border-radius: 10px;
+            }
+        }
+
+        tr {
+            animation: all 0.5s;
+
+            &.error {
+                background-color: rgba($red, 0.3);
+            }
+
+            a {
+                color: $blue;
+                text-decoration: none;
+                transition: color $transition;
+
+                &:hover,
+                &:focus {
+                    color: $blueLight;
+                }
+            }
+        }
+
+        th, td {
+            width: 1%;
+            text-align: left;
+            vertical-align: middle;
+            line-height: 1;
+            white-space: nowrap;
+            font-weight: 400;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            @include fluid-type(padding-left, 320px, 1920px, 12px, 30px);
+            @include fluid-type(padding-top padding-bottom, 320px, 1920px, 8px, 15px);
+
+            &.check {
+                line-height: 1;
+            }
+
+            &.id {
+                text-align: center;
+            }
+
+            &.img {
+
+                img,
+                a {
+                    display: block;
+                    @include fluid-type(max-height, 320px, 1920px, 40px, 50px);
+                    border-radius: 3px;
+                }
+            }
+
+            &.full {
+                width: auto;
+            }
+
+            &:last-child:not(.full) {
+                text-align: right;
+            }
+
+            &:last-child {
+                @include fluid-type(padding-right, 320px, 1920px, 15px, 30px);
+            }
+        }
+
+        td {
+            font-size: 0.9em;
+            border-top: 2px solid $grayLight;
+        }
+    }
+}

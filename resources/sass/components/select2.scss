@@ -1,0 +1,134 @@
+@import "~select2/dist/css/select2.css";
+
+.select2-container {
+    display: block;
+    z-index: 777;
+
+    &--open {
+        z-index: 9999;
+    }
+
+    .select2-selection--single {
+        color: $dark;
+        border: 2px solid $grayLight;
+        border-radius: 3px;
+        transition: all $transition;
+
+        .select2-selection__rendered {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            color: $dark;
+        }
+
+        .select2-selection__arrow {
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .select2-results__option--highlighted[aria-selected] {
+        color: $dark;
+        background: $grayUltraLight;
+    }
+
+    .select2-results__option[aria-selected=true] {
+        color: #fff;
+        background: $blue;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        border: 0;
+        background: $grayUltraLight;
+    }
+
+    &--open,
+    &--focus {
+
+        .select2-selection--single {
+            border-color: $blueLight;
+        }
+    }
+
+    &.large {
+
+        .select2-selection--single {
+            @include fluid-type(height, 320px, 1920px, 36px, 48px);
+            @include fluid-type(font-size, 320px, 1920px, 15px, 18px);
+
+            .select2-selection__rendered {
+                @include fluid-type(padding-left padding-right, 320px, 1920px, 15px, 18px);
+            }
+
+            .select2-selection__arrow {
+                @include fluid-type(width, 320px, 1920px, 30px, 40px);
+            }
+        }
+
+        .select2-search--dropdown .select2-search__field {
+            @include fluid-type(height, 320px, 1920px, 32px, 42px);
+            @include fluid-type(font-size, 320px, 1920px, 14px, 17px);
+            @include fluid-type(padding-left padding-right, 320px, 1920px, 9px, 10px);
+        }
+
+        .select2-results__option {
+            @include fluid-type(min-height, 320px, 1920px, 32px, 42px);
+            @include fluid-type(font-size, 320px, 1920px, 14px, 17px);
+            @include fluid-type(padding-left padding-right, 320px, 1920px, 17px, 20px);
+            @include fluid-type(padding-top padding-bottom, 320px, 1920px, 4px, 8px);
+        }
+
+        .select2-search--dropdown {
+            @include fluid-type(padding, 320px, 1920px, 9px, 10px);
+        }
+    }
+
+    &.medium {
+
+        .select2-selection--single {
+            @include fluid-type(min-height, 320px, 1920px, 32px, 42px);
+            @include fluid-type(font-size, 320px, 1920px, 14px, 16px);
+
+            .select2-selection__rendered {
+                @include fluid-type(padding-left padding-right, 320px, 1920px, 14px, 16px);
+            }
+
+            .select2-selection__arrow {
+                @include fluid-type(width, 320px, 1920px, 30px, 40px);
+            }
+        }
+
+        .select2-search--dropdown .select2-search__field {
+            @include fluid-type(height, 320px, 1920px, 28px, 36px);
+            @include fluid-type(font-size, 320px, 1920px, 13px, 14px);
+            @include fluid-type(padding-left padding-right, 320px, 1920px, 8px, 9px);
+        }
+
+        .select2-results__option {
+            @include fluid-type(min-height, 320px, 1920px, 28px, 36px);
+            @include fluid-type(font-size, 320px, 1920px, 13px, 15px);
+            @include fluid-type(padding-left padding-right, 320px, 1920px, 16px, 18px);
+            @include fluid-type(padding-top padding-bottom, 320px, 1920px, 3px, 6px);
+        }
+
+        .select2-search--dropdown {
+            @include fluid-type(padding, 320px, 1920px, 8px, 9px);
+        }
+    }
+}
+
+.select2-dropdown {
+    overflow: hidden;
+    box-shadow: $shadowLight;
+    border-radius: 3px;
+    border: 0;
+}
+
+.select2-results__option {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+    transition: all $transition;
+}

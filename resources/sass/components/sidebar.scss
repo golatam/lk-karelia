@@ -1,0 +1,187 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 888;
+    width: 100%;
+    color: #ffffff;
+    flex: 0 0 auto;
+    @include fluid-type(padding-top padding-bottom, 320px, 1920px, 15px, 30px);
+    background-color: $black;
+    transform: translateX(-100%);
+    transition: all $transition;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    &__close {
+        position: absolute;
+        @include fluid-type(top, 320px, 1920px, 15px, 30px);
+        @include fluid-type(right, 320px, 1920px, 15px, 30px);
+        width: 20px;
+        height: 20px;
+        border: 0;
+        font-size: 0;
+        z-index: 100;
+        background: none;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 50%;
+            margin-top: -1px;
+            width: 26px;
+            height: 2px;
+            background-color: #ffffff;
+            transform-origin: center;
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__title {
+        color: $gray;
+        line-height: 24px;
+        @include fluid-type(padding-right padding-left, 320px, 1920px, 15px, 30px);
+        @include fluid-type(padding-bottom, 320px, 1920px, 10px, 20px);
+        @include fluid-type(font-size, 320px, 1920px, 16px, 20px);
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        flex: 1 1 auto;
+        overflow: auto;
+
+        > li {
+            position: relative;
+
+            &.active {
+                background-color: rgba(#000, 0.1);
+
+                > a {
+                    opacity: 1;
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+
+                .fa-chevron-right {
+                    transform: rotate(90deg);
+                }
+            }
+
+            > a {
+                position: relative;
+                @include fluid-type(height, 320px, 1920px, 36px, 42px);
+                @include fluid-type(font-size, 320px, 1920px, 14px, 15px);
+                @include fluid-type(padding-right padding-left, 320px, 1920px, 15px, 30px);
+            }
+
+            .fa-chevron-right {
+                position: absolute;
+                top: 50%;
+                @include fluid-type(right, 320px, 1920px, 15px, 30px);
+                font-size: 0.8em;
+                margin-top: -0.4em;
+                transition: all $transition;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            line-height: 1;
+            color: $gray;
+            opacity: 0.7;
+            text-decoration: none;
+            transition: all $transition;
+
+            &:hover {
+                opacity: 1;
+                background-color: rgba(#fff, 0.05);
+            }
+        }
+
+        &-icon {
+            @include fluid-type(width, 320px, 1920px, 28px, 34px);
+        }
+    }
+
+    &__sub-menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        > li {
+
+            &.active {
+
+                > a {
+                    opacity: 1;
+                    background-color: rgba(#000, 0.1);
+                }
+            }
+        }
+
+        a {
+            @include fluid-type(height, 320px, 1920px, 32px, 38px);
+            @include fluid-type(font-size, 320px, 1920px, 13px, 14px);
+            @include fluid-type(padding-right, 320px, 1920px, 15px, 30px);
+            @include fluid-type(padding-left, 320px, 1920px, 43px, 64px);
+        }
+    }
+}
+
+@media all and (min-width: $tablet) {
+    .sidebar {
+        max-width: 300px;
+    }
+}
+
+@media all and (min-width: $desktop) {
+    .sidebar {
+        position: static;
+        width: 25%;
+        transform: translateX(0);
+
+        &__close {
+            display: none;
+        }
+
+        &__menu {
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(#fff, 0.3);
+                border-radius: 6px;
+            }
+        }
+    }
+}

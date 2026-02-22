@@ -1,0 +1,15 @@
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    &__box {
+        @include fluid-type(width, 320px, 1920px, 290px, 440px);
+        @include fluid-type(padding, 320px, 1920px, 20px, 40px);
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: $shadow;
+    }
+}

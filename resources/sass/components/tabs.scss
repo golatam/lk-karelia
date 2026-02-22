@@ -1,0 +1,51 @@
+.tabs {
+
+    &__links {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        width: 100%;
+        overflow: auto;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: color $transition;
+        line-height: 1;
+        color: $blue;
+        font-weight: 700;
+        border-bottom: 2px solid transparent;
+        @include fluid-type(height, 320px, 1920px, 36px, 48px);
+        @include fluid-type(padding-left padding-right, 320px, 1920px, 12px, 30px);
+        @include fluid-type(font-size, 320px, 1920px, 15px, 18px);
+        border-radius: 3px 3px 0 0;
+        overflow: hidden;
+
+        &:hover {
+            color: $blueLight;
+        }
+
+        &.active {
+            color: $dark;
+            background-color: #fff;
+        }
+    }
+
+    &__item {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        &:first-child.active {
+
+            .panel__body {
+                border-radius: 0 3px 3px 3px;
+            }
+        }
+    }
+}

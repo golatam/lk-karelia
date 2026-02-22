@@ -1,0 +1,19 @@
+stages:
+  - deploy
+
+deploy-job-laravel:
+  stage: deploy
+  tags:
+    - laravel
+  script:
+    - cd /var/www/v2.lk.init-rk.ru
+    - git pull origin master
+    - php artisan cache:clear
+    - php artisan route:cache
+    - php artisan view:cache
+    - php artisan config:cache
+    - php artisan migrate --force
+    - chmod -R 777 storage/framework/views
+    - chmod -R 777 bootstrap
+  only:
+    - master

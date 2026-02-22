@@ -1,0 +1,46 @@
+// Цвета
+$gray: #b7c0cf;
+$grayLight: #eceef3;
+$grayUltraLight: #f3f4f6;
+$grayDarken: #999999;
+$blue: #117dd8;
+$blueLight: #1d9df9;
+$blueUltraLight: #00c8ff;
+$green: #00a562;
+$greenLight: #00c083;
+$dark: #364364;
+$darkLight: #667695;
+$black: #263238;
+$red: #ff0000;
+$redLight: #ff5436;
+$orange: #ff7100;
+$orangeLight: #ff9100;
+
+// Тени
+$shadow: 0 10px 30px rgba(17, 56, 86, .05);
+$shadowLight: 0 5px 15px rgba(17, 56, 86, .05);
+
+// Шрифты
+$helvetica: Arial, Helvetica, sans-serif;
+
+// Breakpoints
+$tablet: 768px;
+$desktop: 1024px;
+$desktopLg: 1400px;
+$desktopXl: 1920px;
+
+// Другое
+$transition: 0.3s;
+
+// Adaptive fluid function
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+    @each $property in $properties {
+        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+}
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}

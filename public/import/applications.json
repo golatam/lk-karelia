@@ -1,0 +1,100 @@
+{
+    "most_beautiful_village_fields": [
+        {
+            "name": "Демографические показатели",
+            "significance_factor": 1,
+            "max_rating": 2,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Наличие Интернет-сайта села (поселка, деревни), группы, сообщества в сети Интернет",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Внешний облик села (поселка, деревни)",
+            "significance_factor": 1,
+            "max_rating": 5,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "История (легенда) села (поселка, деревни)",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Водоемы (родники, колодцы)",
+            "significance_factor": 1,
+            "max_rating": 5,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Памятники природы села (поселка, деревни)",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Памятники архитектуры",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Освещенность улиц и площадей",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Места общего пользования и отдыха, парки, скамейки, беседки, спортивные и детские площадки",
+            "significance_factor": 1,
+            "max_rating": 5,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Художественная выразительность и национальное своеобразие жилой застройки",
+            "significance_factor": 1,
+            "max_rating": 5,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Состояние мест захоронений (кладбищ) села (поселка, деревни)",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Степень участия населения в совместной работе по уборке, ремонту, благоустройству и озеленению территорий, охране окружающей среды",
+            "significance_factor": 1,
+            "max_rating": 3,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Формы самоорганизации граждан, распространенные на территории села (поселка, деревни)",
+            "significance_factor": 1,
+            "max_rating": 5,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Положительный опыт села (поселка, деревни) в области благоустройства, озеленения и поддержания чистоты и порядка",
+            "significance_factor": 1,
+            "max_rating": 5,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Культурно-массовые мероприятия за предыдущий год",
+            "significance_factor": 1,
+            "max_rating": 999,
+            "application_type": "most_beautiful_villages"
+        },
+        {
+            "name": "Культурные традиций и обычаи села (поселка, деревни)",
+            "significance_factor": 1,
+            "max_rating": 2,
+            "application_type": "most_beautiful_villages"
+        }
+    ]
+}

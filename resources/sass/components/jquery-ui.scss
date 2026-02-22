@@ -1,0 +1,168 @@
+@import "~jquery-ui/themes/base/base.css";
+
+.ui-datepicker {
+    padding: 0.4em 0.4em 0;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: $shadow;
+    border: 1px solid $grayLight;
+    z-index: 8888 !important;
+
+    table {
+        font-size: 0.85em;
+    }
+
+    &-header {
+        margin: 0 0 0.2em;
+        border-bottom: 1px solid $grayLight;
+    }
+
+    &-next,
+    &-prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: all $transition;
+
+        &:before {
+            font-size: 0.85em;
+            font-weight: 900;
+            font-family: "Font Awesome 5 Free";
+        }
+
+        &:hover {
+            top: 2px;
+            background-color: $grayLight;
+        }
+    }
+    &-next {
+        &:before {
+            content: '\f054';
+        }
+
+        &:hover {
+            right: 2px;
+        }
+    }
+    &-prev {
+        &:before {
+            content: '\f053';
+        }
+
+        &:hover {
+            left: 2px;
+        }
+    }
+
+    .ui-state-default {
+        width: 2.2em;
+        height: 2.2em;
+        line-height: 2.2em;
+        padding: 0;
+        color: $black;
+        text-align: center;
+        border-radius: 3px;
+        transition: $transition;
+
+        &:hover {
+            background-color: $grayUltraLight;
+        }
+
+        &.ui-priority-secondary { color: $gray; }
+        &.ui-state-highlight { color: #ffffff; background-color: $blueLight; }
+    }
+}
+
+.ui-timepicker-div {
+    padding: 0 5px 5px 5px;
+    font-size: 0.85em;
+
+    dl {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 1;
+        margin: 0;
+
+        dt {
+            width: 35%;
+            flex: 0 0 auto;
+            margin: 0 0 5px;
+        }
+
+        dd {
+            width: 65%;
+            flex: 0 0 auto;
+            margin: 0 0 5px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            font-size: 1.4em;
+            border: 0;
+            background: none;
+        }
+
+        .ui_tpicker_unit_hide {
+            display: none;
+        }
+    }
+
+    .ui-slider-horizontal {
+        height: 0.6em;
+        margin: 0.6em;
+        background-color: $grayLight;
+    }
+
+    .ui-slider-handle {
+        width: 1.4em;
+        height: 1.4em;
+        background-color: $blue;
+        border-radius: 50%;
+        transition: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $blueLight;
+        }
+    }
+}
+
+.ui-autocomplete {
+    z-index: 9999;
+    border-radius: 0 0 3px 3px;
+    background-color: #fff;
+    box-shadow: $shadow;
+    border: 1px solid $grayLight;
+    @include fluid-type(max-height, 320px, 1920px, 180px, 240px);
+    overflow: auto;
+
+
+   > .ui-menu-item {
+       margin: 0;
+       padding-top: 0;
+       padding-bottom: 0;
+       @include fluid-type(padding-left padding-right, 320px, 1920px, 15px, 18px);
+       @include fluid-type(font-size, 320px, 1920px, 15px, 18px);
+       @include fluid-type(height, 320px, 1920px, 36px, 48px);
+       @include fluid-type(line-height, 320px, 1920px, 36px, 48px);
+       overflow: hidden;
+       text-overflow: ellipsis;
+       white-space: nowrap;
+       transition: all 0.3s;
+
+       &:hover {
+           color: $dark;
+           background: $grayUltraLight;
+       }
+
+       .ui-menu-item-wrapper {
+           padding: 0;
+           margin: 0;
+       }
+   }
+}
