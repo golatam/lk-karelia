@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class StartController extends CommonController
 {
@@ -26,14 +27,10 @@ class StartController extends CommonController
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\View\Factory
+     * @return \Inertia\Response
      */
     public function __invoke(Request $request)
     {
-        $this
-            ->setCollect([])
-        ;
-
-        return view("start", $this->getCollect());
+        return Inertia::render('Dashboard');
     }
 }

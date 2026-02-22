@@ -1,53 +1,30 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js  --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "devDependencies": {
-        "@popperjs/core": "^2.9.2",
-        "axios": "^0.21.1",
-        "bootstrap": "^5.0.1",
-        "cross-env": "^7.0.3",
-        "jquery": "^3.6.0",
-        "laravel-mix": "^6.0.19",
-        "lodash": "^4.17.21",
-        "resolve-url-loader": "^4.0.0",
-        "sass": "^1.34.0",
-        "sass-loader": "^11.1.1",
-        "vue": "^2.6.12",
-        "vue-template-compiler": "^2.6.12",
-        "webpack-cli": "^4.7.0"
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "@inertiajs/vue3": "^2.0",
+        "@tailwindcss/forms": "^0.5",
+        "@vitejs/plugin-vue": "^5.0",
+        "autoprefixer": "^10.4",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4",
+        "sass-embedded": "^1.80",
+        "tailwindcss": "^3.4",
+        "vite": "^6.0",
+        "vue": "^3.5"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.3",
-        "dns-packet": "^5.2.4",
+        "jquery": "^3.6.0",
         "jquery-ui": "^1.12.1",
         "micromodal": "^0.4.6",
-        "multicast-dns": "^7.2.3",
         "select2": "^4.0.13",
-        "vanilla-masker": "^1.2.0"
-    },
-    "name": "dback",
-    "description": "Список команд для запуска:",
-    "version": "1.0.0",
-    "main": "webpack.mix.js",
-    "directories": {
-        "test": "tests"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://gitlab.com/chieftec/initrk-lk-v2.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://gitlab.com/chieftec/issues"
-    },
-    "homepage": "https://gitlab.com/chieftec#readme"
+        "vanilla-masker": "^1.2.0",
+        "axios": "^1.7"
+    }
 }
